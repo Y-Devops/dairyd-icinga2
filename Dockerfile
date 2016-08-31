@@ -1,9 +1,9 @@
 # Dockerfile for icinga2 with icingaweb2
-# https://github.com/jjethwa/icinga2
+# https://github.com/elnomade/icinga2-ubuntu
 
-FROM debian:jessie
+FROM ubuntu:xenial
 
-MAINTAINER Jordan Jethwa
+MAINTAINER Leonardo Luduena
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV ICINGA2_FEATURE_GRAPHITE false
@@ -15,7 +15,7 @@ RUN apt-get -qq update && \
   apt-get -qqy install --no-install-recommends bash sudo procps ca-certificates wget supervisor mysql-server mysql-client apache2 pwgen unzip php5-mysql php5-ldap ssmtp mailutils vim php5-curl
 
 RUN wget --quiet -O - https://packages.icinga.org/icinga.key | apt-key add - && \
-  echo "deb http://packages.icinga.org/debian icinga-jessie main" >> /etc/apt/sources.list && \
+  echo "deb http://packages.icinga.org/ubuntu icinga-xenial main" >> /etc/apt/sources.list && \
   apt-get -qq update && \
   apt-get -qqy install --no-install-recommends icinga2 icinga2-ido-mysql nagios-plugins icingaweb2 icingacli curl && \
   apt-get clean
