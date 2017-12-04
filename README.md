@@ -23,7 +23,7 @@ Start a new container and bind to host's port 80
 
 Start a new container and supply the icinga and icinga_web password
 
-    sudo docker run -e ICINGA_PASSWORD="icinga" -e ICINGA_WEB_PASSWORD="icinga_web" -t jordan/icinga2:latest
+    sudo docker run -e ICINGA_PASSWORD="icinga" -e ICINGA_WEB_PASSWORD="icinga_web" -t elnomade/icinga2-ubuntu:latest
 
 ## Icinga Web 2
 
@@ -40,12 +40,12 @@ The graphite writer can be enabled by setting thez ICINGA2_FEATURE_GRAPHITE vari
 Example:
 
 ```
-sudo docker run --link graphite:graphite -e ICINGA2_FEATURE_GRAPHITE=true -e ICINGA2_FEATURE_GRAPHITE_HOST=graphite -e ICINGA2_FEATURE_GRAPHITE_PORT=2003 -t jordan/icinga2:latest
+sudo docker run --link graphite:graphite -e ICINGA2_FEATURE_GRAPHITE=true -e ICINGA2_FEATURE_GRAPHITE_HOST=graphite -e ICINGA2_FEATURE_GRAPHITE_PORT=2003 -t elnomade/icinga2-ubuntu:latest
 ```
 
 ## Icinga Director
 
-The [Icinga Director](https://github.com/Icinga/icingaweb2-module-director) Icinga Web 2 module is installed and enabled by default.  You can disable the automatic kickstart when the container starts by setting the DIRECTOR_KICKSTART variable to false.  To customize the kickstart settings, modify the /etc/icingaweb2/modules/director/kickstart.ini 
+The [Icinga Director](https://github.com/Icinga/icingaweb2-module-director) Icinga Web 2 module is installed and enabled by default.  You can disable the automatic kickstart when the container starts by setting the DIRECTOR_KICKSTART variable to false.  To customize the kickstart settings, modify the /etc/icingaweb2/modules/director/kickstart.ini
 
 ## Environment variables & Volumes
 

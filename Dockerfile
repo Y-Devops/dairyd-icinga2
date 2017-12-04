@@ -11,8 +11,9 @@ ENV ICINGA2_FEATURE_GRAPHITE_HOST graphite
 ENV ICINGA2_FEATURE_GRAPHITE_PORT 2003
 
 RUN apt-get -qq update && \
+  apt-cache search php | grep ldap && \
   apt-get -qqy upgrade && \
-  apt-get -qqy install --no-install-recommends bash sudo procps ca-certificates wget supervisor mysql-server mysql-client apache2 pwgen unzip php5-mysql php5-ldap ssmtp mailutils vim php5-curl
+  apt-get -qqy install --no-install-recommends bash sudo procps ca-certificates wget supervisor mysql-server mysql-client apache2 pwgen unzip php-mysql php-ldap ssmtp mailutils vim php-curl
 
 RUN wget --quiet -O - https://packages.icinga.org/icinga.key | apt-key add - && \
   echo "deb http://packages.icinga.org/ubuntu icinga-xenial main" >> /etc/apt/sources.list && \
@@ -22,7 +23,7 @@ RUN wget --quiet -O - https://packages.icinga.org/icinga.key | apt-key add - && 
 
 ADD content/ /
 
-RUN chmod u+x /opt/supervisor/mysql_supervisor /opt/supervisor/icinga2_supervisor /opt/supervisor/apache2_supervisor /opt/run 
+RUN chmod u+x /opt/supervisor/mysql_supervisor /opt/supervisor/icinga2_supervisor /opt/supervisor/apache2_supervisor /opt/run
 
 # Temporary hack to get icingaweb2 modules via git
 RUN mkdir -p /etc/icingaweb2.dist/enabledModules && \
