@@ -11,7 +11,6 @@ ENV ICINGA2_FEATURE_GRAPHITE_HOST graphite
 ENV ICINGA2_FEATURE_GRAPHITE_PORT 2003
 
 RUN apt-get -qq update && \
-  apt-cache search php | grep ldap && \
   apt-get -qqy upgrade && \
   apt-get -qqy install --no-install-recommends bash sudo procps ca-certificates wget supervisor mysql-server mysql-client apache2 pwgen unzip php-mysql php-ldap ssmtp mailutils vim php-curl
 

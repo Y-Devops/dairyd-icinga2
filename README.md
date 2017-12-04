@@ -13,17 +13,17 @@ image.
 
 ## Automated build
 
-    docker pull jordan/icinga2
+    docker pull elnomade/icinga2-ubuntu:aio
 
 ## Usage
 
 Start a new container and bind to host's port 80
 
-    sudo docker run -p 80:80 -t jordan/icinga2:latest
+    sudo docker run -p 80:80 -t elnomade/icinga2-ubuntu:aio
 
 Start a new container and supply the icinga and icinga_web password
 
-    sudo docker run -e ICINGA_PASSWORD="icinga" -e ICINGA_WEB_PASSWORD="icinga_web" -t elnomade/icinga2-ubuntu:latest
+    sudo docker run -e ICINGA_PASSWORD="icinga" -e ICINGA_WEB_PASSWORD="icinga_web" -t elnomade/icinga2-ubuntu:aio
 
 ## Icinga Web 2
 
@@ -40,7 +40,7 @@ The graphite writer can be enabled by setting thez ICINGA2_FEATURE_GRAPHITE vari
 Example:
 
 ```
-sudo docker run --link graphite:graphite -e ICINGA2_FEATURE_GRAPHITE=true -e ICINGA2_FEATURE_GRAPHITE_HOST=graphite -e ICINGA2_FEATURE_GRAPHITE_PORT=2003 -t elnomade/icinga2-ubuntu:latest
+sudo docker run --link graphite:graphite -e ICINGA2_FEATURE_GRAPHITE=true -e ICINGA2_FEATURE_GRAPHITE_HOST=graphite -e ICINGA2_FEATURE_GRAPHITE_PORT=2003 -t elnomade/icinga2-ubuntu:aio
 ```
 
 ## Icinga Director
