@@ -1,9 +1,11 @@
 # Dockerfile for icinga2 with icingaweb2
-# https://github.com/elnomade/icinga2-ubuntu
+# https://github.com/lleox/icinga2-ubuntu
 
 FROM ubuntu:xenial
 
-MAINTAINER Leonardo Luduena
+ENV REFRESHED_AT 2018-07-01
+
+MAINTAINER Leonardo Luduena <lleo@linux.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV ICINGA2_FEATURE_GRAPHITE false
