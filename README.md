@@ -13,13 +13,13 @@ image.
 
 ## Automated build
 
-    docker pull elnomade/icinga2-ubuntu:aio
+    docker pull yungas/yungas_icinga2-ubuntu:aio
 
 ## Usage
 
 Start a new container and bind to host's port 80
 
-    sudo docker run -p 80:80 -t elnomade/icinga2-ubuntu:aio
+    sudo docker run -p 80:80 -t yungas/yungas_icinga2-ubuntu:aio
 
 Start a new container and supply the icinga and icinga_web password
 
