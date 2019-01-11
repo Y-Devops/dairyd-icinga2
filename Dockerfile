@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM dairyd/ubuntu:xenial
 
 LABEL maintainer="24.7@yungasdevops.com"
 
