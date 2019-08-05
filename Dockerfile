@@ -1,8 +1,8 @@
 FROM dairyd/ubuntu:xenial
 
-LABEL maintainer="24.7@yungasdevops.com"
+LABEL maintainer="7of9@ydevops.com"
 
-ENV REFRESHED_AT 2019-07-01
+ENV REFRESHED_AT 2019-08-05
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV ICINGA2_FEATURE_GRAPHITE false
